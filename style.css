@@ -1,0 +1,46 @@
+body {
+  background-color: black;
+  color: aliceblue;
+  font-family: "sans-serif";
+  background-image: radial-gradient(#212121 1%, transparent 1%),
+    radial-gradient(#fafafa 1%, transparent 1%);
+  background-position: 0 0, 20px 30px;
+  background-size: 100px 100px;
+}
+.stage {
+  display: flex;
+  justify-content: center;
+}
+.grid {
+  height: 600px;
+  width: 300px;
+  background-color: #7fdbff;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid div {
+  height: 30px;
+  width: 30px;
+}
+.moving {
+  box-shadow: inset -1px 0px 1px 2px white;
+  border-radius: 15%;
+}
+
+.score {
+  margin-left: 5rem;
+}
+
+#startstop {
+  width: 6rem;
+  height: 3rem;
+  font-size: 1.25rem;
+}
+
+.gameover {
+  color: crimson;
+  font-size: 4rem;
+  font-weight: bold;
+  position: relative;
+}
