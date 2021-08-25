@@ -4,16 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tetris Game</title>
+    <title>Tetris</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="stage">
-      <div class="grid"></div>
-      <div class="score">
-        <h1>Score: <span id="points">0</span></h1>
-        <div class="">
-          <button id="startstop">Start</button>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="grid"></div>
+        </div>
+        <div class="col-md-4">
+          <div class="score">
+            <h1>Score: <span id="points">0</span></h1>
+            <div class="">
+              <button id="startstop">Start</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -18,6 +18,11 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
 
 .grid div {
   height: 30px;

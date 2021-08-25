@@ -1,8 +1,8 @@
 const grid = document.querySelector('.grid');
 const points = document.getElementById('points');
 const startStop = document.getElementById('startstop');
-const HEIGHT = 20;
-const WIDTH = 10;
+const HEIGHT = 20; //no of divs/cells vertically
+const WIDTH = 10; // no of divs/cells horizontallyy
 const LEFT = 'LEFT'
 const RIGHT = 'RIGHT'
 let timer;

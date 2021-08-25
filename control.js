@@ -31,14 +31,18 @@ startStop.addEventListener('click', () => {
     }
 
 });
+
+
+// this function starts the game 
+
 function startGame() {
 
     timer = setInterval(() => {
         if (!isMoved) {
-            unDraw();
-            position += WIDTH;
-            draw();
-            updatePoints(1);
+            unDraw(); // undraws the shape i.e removes the classes
+            position += WIDTH; // add width to the pointer which will move to the next line
+            draw();    // draw again the shape in next liune i.e add the color classes
+            updatePoints(1);    // increase score by 1
         }
         stop();
         isMoved = false;
@@ -46,6 +50,7 @@ function startGame() {
 
 }
 
+// this will clear the setInterval 
 function pauseGame() {
     clearInterval(timer);
     timer = null;
@@ -71,15 +76,15 @@ document.onkeydown = function (e) {
 
 }
 
-
+// this will be used to move the shape right or left
 function moveParallel(dir) {
     unDraw();
 
     if (dir === LEFT && isMoveable(dir)) {
-        position -= 1;
+        position -= 1; // decrement the position by 1 to move left
     }
     else if (dir === RIGHT && isMoveable(dir)) {
-        position += 1;
+        position += 1;  // incerment the position by 1 to move right
     }
 
     draw();
@@ -87,15 +92,21 @@ function moveParallel(dir) {
 }
 
 function isMoveable(dir) {
+    // will check if the shape is at the right or left edge 
 
     if (dir === RIGHT) {
+        // doesn't allow to move right if shape is already at the right edge
+        // or if there is already any shape at the right
         if (isAtRight())
             return false;
+
         if (shape.some(index => cells[index + position + 1].classList.contains('end')))
             return false
     }
 
     if (dir === LEFT) {
+        // doesn't allow to move left it shape is already at the left edge
+        // or if there is already any shape at the left
         if (isAtLeft())
             return false;
         if (shape.some(index => cells[index + position - 1].classList.contains('end')))
@@ -106,6 +117,7 @@ function isMoveable(dir) {
 }
 
 function changeVariant() {
+    // this function rotates the shape by changing the variant number
     unDraw();
     if (variant != 3)
         variant++;
@@ -138,16 +150,24 @@ function makeRotateAble(pos) {
 }
 
 function isAtRight() {
+    //checks whether the current shape is at the right edge
+    //by taking the mod of current position of shpe with width 
+    // if it is equal to width-1 then it is at the edge
     return shape.some(index => (position + index) % WIDTH === WIDTH - 1)
 }
 
 function isAtLeft() {
+    //checks whether the current shape is at the left edge
+    //by taking the mod of current position of shape with width 
+    // if it is equal to 0 then it is at the left edge
     return shape.some(index => (position + index) % WIDTH === 0)
 }
 
 
 
 function moveDown() {
+
+    // this function helps the shape to move down quicky on key down
 
     unDraw();
     position += 10;

@@ -1,3 +1,5 @@
+// these constants are the shapes with with each array containing its rotations
+
 const L = [
     [1, 2, 2 + WIDTH, 2 + (2 * WIDTH)],
     [1, 1 + WIDTH, 1 + (2 * WIDTH), 2 + (2 * WIDTH)],
